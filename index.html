@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Menu | Bar & Cafe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Bar & Cafe</h1>
+    <nav class="nav-bar">
+      <button class="category-btn" data-cat="cafe">Cafe</button>
+      <button class="category-btn" data-cat="drinks">Drinks</button>
+      <button class="category-btn" data-cat="food">Food</button>
+    </nav>
+
+    <div id="food-subcategories" class="subnav hidden">
+      <button class="subcategory-btn" data-sub="snacks">Snacks</button>
+      <button class="subcategory-btn" data-sub="main">Main Meal</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Left: Menu Items -->
+    <section class="menu" id="menu-items"></section>
+
+    <!-- Right: Order Summary -->
+    <aside id="order-panel" class="order-summary">
+      <div class="order-header">
+        <button id="hide-summary-btn" class="toggle-btn" aria-controls="order-panel">Hide Summary</button>
+      </div>
+      <h2>Order Summary - Table 1</h2>
+      <table id="order-table" aria-live="polite">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="totals-row">
+        <h3 id="grand-total">Grand Total: $0.00</h3>
+      </div>
+      <div class="order-actions">
+        <button class="confirm-btn" id="confirm-btn">Confirm The Order</button>
+        <button class="cancel-btn" id="cancel-btn">Cancel Order</button>
+      </div>
+    </aside>
+
+    <!-- Floating show button (visible when the panel is hidden) -->
+    <button id="show-summary-btn" class="show-summary-btn hidden" aria-controls="order-panel">Show Summary</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
